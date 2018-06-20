@@ -1,0 +1,42 @@
+
+
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            
+
+            <h4>Form Validation</h4>
+
+            <form role="form">
+
+                <div class="form-group has-success">
+                    <label class="form-control-label" for="inputSuccess">Insira o CNPJ</label>
+                    <input type="text" class="form-control form-control-success" id="inputSuccess"  #inputSuccess (keyup)="setCNPJ(inputSuccess.value)"> 
+                </div>
+
+                <div class="form-group has-warning" *ngFor="let info of lista_info">
+                    <label class="form-control-label" for="inputWarning">Razão Social</label>
+                    <input type="text" class="form-control form-control-warning" id="inputWarning" value="{{ info.nome }}">
+                </div>
+
+                <div class="form-group has-danger" *ngFor="let info of lista_info">
+                    <label class="form-control-label" for="inputError">Administrador(a)</label>
+                    <input type="text" class="form-control form-control-danger" id="inputError" value="{{ info.qsa[0].nome }}">
+                </div>
+
+                <div class="form-group has-danger" *ngFor="let info of lista_info">
+                    <label class="form-control-label" for="inputError">CNPJ</label>
+                    <input type="text" class="form-control form-control-danger" id="input" value="{{ info.cnpj }}">
+                </div>
+
+                
+                <button type="button" class="btn btn-lg btn-primary" (click)="getCNPJ()">GET</button>
+
+            </form>
+
+            
+        </div>
+    </div>
+    <!-- /.row -->
+
